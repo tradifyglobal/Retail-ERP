@@ -1,0 +1,80 @@
+{
+  "app": {
+    "title": "Retail Store ERP",
+    "logout": "Logout",
+    "settings": "Settings",
+    "dashboard": "Dashboard",
+    "pos": "POS",
+    "inventory": "Inventory",
+    "orders": "Orders",
+    "users": "Users",
+    "branding": "Branding",
+    "reports": "Reports"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "loginSuccess": "Login successful",
+    "loginFailed": "Login failed"
+  },
+  "pos": {
+    "title": "Point of Sale",
+    "addProduct": "Add Product",
+    "cart": "Cart",
+    "total": "Total",
+    "discount": "Discount",
+    "tax": "Tax",
+    "paymentMethod": "Payment Method",
+    "cash": "Cash",
+    "card": "Card",
+    "checkout": "Checkout",
+    "cancel": "Cancel"
+  },
+  "inventory": {
+    "title": "Inventory Management",
+    "products": "Products",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "deleteProduct": "Delete Product",
+    "sku": "SKU",
+    "name": "Product Name",
+    "category": "Category",
+    "price": "Price",
+    "quantity": "Quantity",
+    "actions": "Actions"
+  },
+  "orders": {
+    "title": "Orders",
+    "orderNumber": "Order Number",
+    "customer": "Customer",
+    "status": "Status",
+    "total": "Total",
+    "date": "Date",
+    "pending": "Pending",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "reports": {
+    "title": "Reports",
+    "sales": "Sales Report",
+    "revenue": "Revenue",
+    "transactions": "Transactions",
+    "dateRange": "Date Range"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "close": "Close",
+    "confirm": "Confirm",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export"
+  }
+}

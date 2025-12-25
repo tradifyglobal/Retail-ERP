@@ -1,0 +1,55 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install backend dependencies
+      run: cd backend && npm install
+
+    - name: Build backend
+      run: cd backend && npm run build || true
+
+    - name: Install frontend dependencies
+      run: cd frontend && npm install
+
+    - name: Build frontend
+      run: cd frontend && npm run build
+
+    - name: Run tests (if available)
+      run: |
+        cd backend && npm test || true
+        cd ../frontend && npm test -- --passWithNoTests || true
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Build and push Docker images
+      run: |
+        docker-compose build

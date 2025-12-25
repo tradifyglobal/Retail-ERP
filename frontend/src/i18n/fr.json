@@ -1,0 +1,80 @@
+{
+  "app": {
+    "title": "Système ERP de Magasin de Détail",
+    "logout": "Déconnexion",
+    "settings": "Paramètres",
+    "dashboard": "Tableau de bord",
+    "pos": "Point de Vente",
+    "inventory": "Inventaire",
+    "orders": "Commandes",
+    "users": "Utilisateurs",
+    "branding": "Marque",
+    "reports": "Rapports"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "Inscription",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "firstName": "Prénom",
+    "lastName": "Nom de famille",
+    "loginSuccess": "Connexion réussie",
+    "loginFailed": "Échec de la connexion"
+  },
+  "pos": {
+    "title": "Point de Vente",
+    "addProduct": "Ajouter un produit",
+    "cart": "Panier",
+    "total": "Total",
+    "discount": "Remise",
+    "tax": "Taxe",
+    "paymentMethod": "Méthode de paiement",
+    "cash": "Espèces",
+    "card": "Carte",
+    "checkout": "Passer la commande",
+    "cancel": "Annuler"
+  },
+  "inventory": {
+    "title": "Gestion des stocks",
+    "products": "Produits",
+    "addProduct": "Ajouter un produit",
+    "editProduct": "Modifier le produit",
+    "deleteProduct": "Supprimer le produit",
+    "sku": "SKU",
+    "name": "Nom du produit",
+    "category": "Catégorie",
+    "price": "Prix",
+    "quantity": "Quantité",
+    "actions": "Actions"
+  },
+  "orders": {
+    "title": "Commandes",
+    "orderNumber": "Numéro de commande",
+    "customer": "Client",
+    "status": "Statut",
+    "total": "Total",
+    "date": "Date",
+    "pending": "En attente",
+    "completed": "Complétée",
+    "cancelled": "Annulée"
+  },
+  "reports": {
+    "title": "Rapports",
+    "sales": "Rapport de ventes",
+    "revenue": "Chiffre d'affaires",
+    "transactions": "Transactions",
+    "dateRange": "Plage de dates"
+  },
+  "common": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "add": "Ajouter",
+    "close": "Fermer",
+    "confirm": "Confirmer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "export": "Exporter"
+  }
+}
