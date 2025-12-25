@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/auth');
+const { authMiddleware } = require('../middleware/auth');
 const LicensingMiddleware = require('../middleware/licensing');
 
 /**
@@ -39,74 +39,74 @@ module.exports = (controller) => {
   };
 
   // Chart of Accounts Routes
-  router.post('/accounts', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.post('/accounts', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.createAccount(req, res, next);
   });
 
-  router.get('/accounts', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/accounts', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getChartOfAccounts(req, res, next);
   });
 
-  router.get('/accounts/:accountNumber', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/accounts/:accountNumber', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getAccount(req, res, next);
   });
 
-  router.put('/accounts/:accountNumber', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.put('/accounts/:accountNumber', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.updateAccount(req, res, next);
   });
 
   // Journal Entry Routes
-  router.post('/journal-entries', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.post('/journal-entries', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.postJournalEntry(req, res, next);
   });
 
   // General Ledger Routes
-  router.get('/general-ledger/:accountNumber', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/general-ledger/:accountNumber', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getGeneralLedger(req, res, next);
   });
 
   // Trial Balance Routes
-  router.get('/trial-balance', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/trial-balance', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getTrialBalance(req, res, next);
   });
 
   // Financial Statement Routes
-  router.get('/income-statement', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/income-statement', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getIncomeStatement(req, res, next);
   });
 
-  router.get('/balance-sheet', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/balance-sheet', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getBalanceSheet(req, res, next);
   });
 
-  router.get('/cash-flow', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/cash-flow', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getCashFlowStatement(req, res, next);
   });
 
   // Expense Routes
-  router.post('/expenses', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.post('/expenses', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.recordExpense(req, res, next);
   });
 
-  router.get('/expenses', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/expenses', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getExpenses(req, res, next);
   });
 
-  router.put('/expenses/:expenseId/approve', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.put('/expenses/:expenseId/approve', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.approveExpense(req, res, next);
   });
 
   // Supplier Routes
-  router.get('/suppliers', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/suppliers', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getSuppliers(req, res, next);
   });
 
-  router.post('/suppliers', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.post('/suppliers', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.createSupplier(req, res, next);
   });
 
   // Budget Analysis Routes
-  router.get('/budget-analysis', auth, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
+  router.get('/budget-analysis', authMiddleware, LicensingMiddleware.validateLicense, requireLicense(['Professional', 'Enterprise']), (req, res, next) => {
     controller.getBudgetAnalysis(req, res, next);
   });
 
